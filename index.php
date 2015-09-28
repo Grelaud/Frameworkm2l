@@ -8,20 +8,27 @@ include('./Controler/reservation.php');
 
 include('./Vue/reservations_par_salle.php');
 include('./Vue/reservations_par_ligue.php');
-
-
-//affichage des reservations par salle
-if(isset($_POST['salle'])){
-    $salle=$_POST['salle'];
-    $reservations = listeReservationsSalle($salle);
-    echo '<h1>Liste des réservations de '.$salle.'</h1>';
-    afficherReservations($reservations);
-}
-
-//affichage des reservations par ligue
-if(isset($_POST['ligue'])){
-    $ligue=$_POST['ligue'];
-    $reservations = listeReservationsLigue($ligue);
-    echo '<h1>Liste des réservations de '.$ligue.'</h1>';
-    afficherReservations($reservations);
-}
+?>
+<!doctype html>
+<html>
+    <head>
+        <title>M2L</title>
+    </head>
+    <body>
+        <h1>M2L - ACCUEIL</h1>
+        <<?php
+        foreach ($reservations as $reservation){
+        ?>
+        <article>
+                <?php
+                     echo $reservation[0];
+                     
+                    ?>
+                    <?php
+                    echo $reservation[1];
+                    ?>
+        </article>
+        <?php } ?>
+    </body>
+</html>     
+                
