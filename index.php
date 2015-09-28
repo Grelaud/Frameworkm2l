@@ -6,8 +6,8 @@ include('./Controler/salle.php');
 include('./Controler/ligue.php');
 include('./Controler/reservation.php');
 
-include('./Vue/reservations_par_salle.php');
-include('./Vue/reservations_par_ligue.php');
+include('./Vue/form/reservations_par_salle.php');
+include('./Vue/form/reservations_par_ligue.php');
 ?>
 <!doctype html>
 <html>
