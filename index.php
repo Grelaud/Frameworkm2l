@@ -25,3 +25,8 @@ if(isset($_POST['ligue'])){
     echo '<h1>Liste des réservations de '.$ligue.'</h1>';
     afficherReservations($reservations);
 }
+
+//affichage de toutes les reservations
+ $reservations = listeReservations();
+    echo '<h1>Liste de toutes les réservations </h1>';
+    afficherReservations($reservations);
