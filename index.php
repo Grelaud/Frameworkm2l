@@ -1,13 +1,13 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
-include('./class/connexion.php');
-include('./fct/salle.php');
-include('./fct/ligue.php');
-include('./fct/reservation.php');
+include('./Modele/connexion.php');
+include('./Controler/salle.php');
+include('./Controler/ligue.php');
+include('./Controler/reservation.php');
 
-include('./form/reservations_par_salle.php');
-include('./form/reservations_par_ligue.php');
+include('./Vue/reservations_par_salle.php');
+include('./Vue/reservations_par_ligue.php');
 
 
 //affichage des reservations par salle
