@@ -10,7 +10,7 @@
         ?>
         <article>
                 <?php
-                     echo $reservation[0].' \ '.$reservation[1].' \ '.$reservation[2].' \ '.$reservation[3].' \ '.$reservation[4].' \ '.$reservation[5];
+                     echo $reservation[0].' | '.$reservation[1].' | '.$reservation[2].' | '.$reservation[3].' | '.$reservation[4].' | '.$reservation[5];
                     ?>
         </article>
         <?php } ?>
