@@ -5,15 +5,15 @@
     </head>
     <body>
         <h1>M2L - ACCUEIL</h1>
-        <?php
-        foreach ($reservations as $reservation){
-        ?>
+        <?php foreach ($reservations as $reservation): ?>
         <article>
-                <?php
-                     echo $reservation[0].' | '.$reservation[1].' | '.$reservation[2].' | '.$reservation[3].' | '.$reservation[4].' | '.$reservation[5];
-                    ?>
+            <h2><?php echo $reservation->getId() ?></h2>
+            <p><?php echo $reservation->getDate() ?></p>
+            <p><?php echo $reservation->getHeureDebut() ?></p>
+            <p><?php echo $reservation->getHeureFin() ?></p>
+            <p><?php echo $reservation->getSalle_id() ?></p>
+            <p><?php echo $reservation->getLigue_id() ?></p>
         </article>
-        <?php } ?>
+        <?php endforeach ?>
     </body>
-</html>     
-                
+</html>            
