@@ -1,0 +1,11 @@
+body{
+    padding-top: 80px;
+    background:#FFF8DC;
+    color:black;
+}
+
+.footer{
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    text-align: center;
+}
