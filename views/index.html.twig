@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="microcms.css" rel="stylesheet" />
+    <title>M2L</title>
+</head>
+<body>
+    <header>
+        <h1>M2L</h1>
+    </header>
+    {% for reservation in reservations %}
+    <article>
+        <p>{{ reservation.id }}</p>
+        <p>{{ reservation.date }}</p>
+        <p>{{ reservation.heureDebut }}</p>
+        <p>{{ reservation.heureFin }}</p>
+        <p>{{ reservation.salle_id }}</p>
+        <p>{{ reservation.ligue_id }}</p>
+    </article>
+    {% endfor %}
+    <footer class="footer">
+        <a href="https://github.com/bpesquet/OC-MicroCMS">MicroCMS</a> is a minimalistic CMS built as a showcase for modern PHP development.
+    </footer>
+</body>
+</html>
