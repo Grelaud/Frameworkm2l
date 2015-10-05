@@ -54,7 +54,7 @@ class ReservationDAO {
         // Convert query result to an array of domain objects
         $reservations = array();
         foreach ($result as $row) {
-            $reservationId = $row['reserv_id'];
+            $reservationId = $row['id'];
             $reservations[$reservationId] = $this->buildReservation($row);
         }
         return $reservations;
@@ -76,12 +76,12 @@ class ReservationDAO {
 
     private function buildReservation(array $row) {
         $reservation = new Reservation();
-        $reservation->setId($row['reserv_id']);
-        $reservation->setDate($row['reserv_date']);
-        $reservation->setHeureDebut($row['reserv_heureDebut']);
-        $reservation->setHeureFin($row['reserv_heureFin']);
-        $reservation->setSalle_id($row['reser_salle_id']);
-        $reservation->setligue_id($row['reserv_ligue_id']);
+        $reservation->setId($row['id']);
+        $reservation->setDate($row['date']);
+        $reservation->setHeureDebut($row['heureDebut']);
+        $reservation->setHeureFin($row['heureFin']);
+        $reservation->setSalle_id($row['salle_id']);
+        $reservation->setligue_id($row['ligue_id']);
         return $reservation;
     }
     
