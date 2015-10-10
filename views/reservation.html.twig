@@ -1,0 +1,29 @@
+{% extends "layout.html.twig" %}
+
+
+{% block title %}{{reservation.title }}{% endblock %}
+
+
+{% block content %}
+
+<p>
+
+    <h2>{{ reservation.id }}</h2>
+
+    <p>{{ reservation.ligue_id }}</p>
+
+    <h3>Ligue</h3>
+
+    {% for ligue in ligues %}
+
+        <strong>{{ ligue.id }}</strong> said : {{ ligue.id }}<br>
+
+    {% else %}
+
+        No comments yet.
+
+    {% endfor %}
+
+</p>
+
+{% endblock %}

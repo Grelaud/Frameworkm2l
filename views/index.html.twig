@@ -1,42 +1,21 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ app.request.basepath }}/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ app.request.basepath }}/css/m2l.css" rel="stylesheet">
-    <title>M2L</title>
-</head>
-<body>
-    <div class="container">
-        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-target">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="">M2L</a>
-                </div>
-                <div class="collapse navbar-collapse" id="navbar-collapse-target">
-                </div>
-            </div><!-- /.container -->
-        </nav>        
-    {% for reservation in reservations %}
-  <article>
-        <p>{{ reservation.id }}</p>
-        <p>{{ reservation.date }}</p>
-        <p>{{ reservation.heureDebut }}</p>
-        <p>{{ reservation.heureFin }}</p>
-        <p>{{ reservation.salle_id }}</p>
-        <p>{{ reservation.ligue_id }}</p>
-    </article>
-    {% endfor %}
-    <footer class="footer">
-            <a href="https://github.com/bpesquet/OC-MicroCMS">M2L</a> is a minimalistic CMS built as a showcase for modern PHP development.
-        </footer>
-    </div>
-</body>
-</html>
+{% extends "layout.html.twig" %}
+
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+{% for reseervation in reservations %}
+
+<article>
+
+    <h2><a class="articleTitle" href="{{ path('reservation', { 'id': reservation.id }) }}">{{ reservation.id }}</a></h2>
+
+    <p>{{ reservation.ligue_id }}</p>
+
+</article>
+
+{% endfor %}
+
+{% endblock %}

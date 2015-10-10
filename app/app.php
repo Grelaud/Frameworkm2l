@@ -11,9 +11,14 @@ $app->register(new Silex\Provider\DoctrineServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../views',
 ));
+$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 // Register services.
 $app['dao.reservation'] = $app->share(function ($app) {
     return new FrameworkM2L\DAO\ReservationDAO($app['db']);
 });
-
+$app['dao.ligue'] = $app->share(function ($app) {
+    $ligueDAO = new FrameworkM2L\DAO\LigueDAO($app['db']);
+    $ligueDAO->setReservationDAO($app['dao.reservation']);
+    return $ligueDAO;
+});

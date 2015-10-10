@@ -2,10 +2,15 @@
     "require": {
         "silex/silex": "^1.3",
         "doctrine/dbal": "2.5.*",
-        "twig/twig": "^1.22"        
+        "twig/twig": "^1.22",
+        "symfony/twig-bridge": "2.7.*"
     },
     "autoload": {
         "psr-4": {"FrameworkM2L\\": "src"}
-    }
+    },
+    "repositories": {
 
+        "packagist": { "url": "https://packagist.org", "type": "composer" }
+
+    }
 }
