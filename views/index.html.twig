@@ -3,8 +3,12 @@
 {% block content %}
 {% for reservation in reservations %}
 <article>
-    <h2><a class="articleTitle" href="{{ path('reservation', { 'id': reservation.id }) }}">{{ reservation.id }}</a></h2>
-    <p>{{ reservation.ligue_id }}</p>
+    <h2><a class="articleTitle" href="{{ path('reservation', { 'id': reservation.id }) }}">Réservation : {{ reservation.id }}</a></h2>
+    date : {{ reservation.date }}<br/>
+    heure de début :{{ reservation.heureDebut }}<br/>
+    heure de fin : {{ reservation.heureFin }}<br/>
+    
+    <p>Numéro de la ligue :{{ reservation.ligue_id }}</p>
 </article>
 {% endfor %}
 {% endblock %}

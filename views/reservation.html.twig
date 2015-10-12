@@ -3,8 +3,7 @@
 {% block content %}
 <p>
     {% for ligue in ligues %}
-    <article><h3>Reservation : </h3>
-        <h2>{{ ligue.reservation.id }}</h2><br/>
+    <article><h3>Réservation : {{ ligue.reservation.id }} </h3>
     {{ ligue.reservation.date }}<br/>
     {{ ligue.reservation.heureDebut }}<br/>
     {{ ligue.reservation.heureFin }}
