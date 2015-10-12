@@ -45,7 +45,7 @@ class Reservation{
     }
     
     public function setHeureFin($heureFin) {
-        $this->id = $heureFin;
+        $this->heureFin = $heureFin;
     }
 
 

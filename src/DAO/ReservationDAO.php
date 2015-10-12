@@ -36,11 +36,11 @@ class ReservationDAO extends DAO {
     protected function buildDomainObject($row) {
         $reservation = new Reservation();
         $reservation->setId($row['id']);
-        $reservation->setId($row['date']);
-        $reservation->setId($row['heureDebut']);
-        $reservation->setId($row['heureFin']);
-        $reservation->setId($row['salle_id']);
-        $reservation->setId($row['ligue_id']);
+        $reservation->setDate($row['date']);
+        $reservation->setHeureDebut($row['heureDebut']);
+        $reservation->setHeureFin($row['heureFin']);
+        $reservation->setSalle_id($row['salle_id']);
+        $reservation->setLigue_id($row['ligue_id']);
         return $reservation;
     }
     

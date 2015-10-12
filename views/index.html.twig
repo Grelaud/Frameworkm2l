@@ -1,21 +1,10 @@
 {% extends "layout.html.twig" %}
-
-
 {% block title %}Home{% endblock %}
-
-
 {% block content %}
-
-{% for reseervation in reservations %}
-
+{% for reservation in reservations %}
 <article>
-
     <h2><a class="articleTitle" href="{{ path('reservation', { 'id': reservation.id }) }}">{{ reservation.id }}</a></h2>
-
     <p>{{ reservation.ligue_id }}</p>
-
 </article>
-
 {% endfor %}
-
 {% endblock %}

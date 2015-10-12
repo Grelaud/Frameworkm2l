@@ -8,27 +8,12 @@ use FrameworkM2L\Domain\Ligue;
 class LigueDAO extends DAO 
 
 {
-
-    /**
-
-     * @var \MicroCMS\DAO\ArticleDAO
-
-     */
-
     private $reservationDAO;
 
-
+    
     public function setReservationDAO(reservationDAO $reservationDAO) {
         $this->reservationDAO = $reservationDAO;
     }
-
-    /**
-     * Return a list of all comments for an article, sorted by date (most recent last).
-     *
-     * @param integer $reservationId The article id.
-     *
-     * @return array A list of all comments for the article.
-     */
 
     public function findAllByReservation($reservationId) {
         // The associated article is retrieved only once
@@ -36,7 +21,10 @@ class LigueDAO extends DAO
 
         // art_id is not selected by the SQL query
         // The article won't be retrieved during domain objet construction
-        $sql = "select id,label from ligue where id=? order by id";
+        $sql = "select ligue.id AS id,ligue.label AS label "
+                . "from ligue,reservation "
+                . "where ligue.id=reservation.ligue_id "
+                . "and reservation.id=?";
         $result = $this->getDb()->fetchAll($sql, array($reservationId));
 
         // Convert query result to an array of domain objects
@@ -46,17 +34,11 @@ class LigueDAO extends DAO
             $ligue = $this->buildDomainObject($row);
             // The associated article is defined for the constructed comment
             $ligue->setReservation($reservation);
-            $ligues[$ligueId] = $ligue;
+            $ligues = array($ligue);
         }
         return $ligues;
     }
 
-    /**
-     * Creates an Comment object based on a DB row.
-     *
-     * @param array $row The DB row containing Comment data.
-     * @return \MicroCMS\Domain\Comment
-     */
     protected function buildDomainObject($row) {
         $ligue = new Ligue();
         $ligue->setId($row['id']);
