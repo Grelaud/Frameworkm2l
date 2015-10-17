@@ -67,5 +67,4 @@ class Reservation{
     public function setLigue_id($ligue_id) {
         $this->ligue_id = $ligue_id;
     }
-
 }

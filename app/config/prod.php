@@ -6,7 +6,7 @@ $app['db.options'] = array(
     'charset'  => 'utf8',
     'host'     => 'localhost',
     'port'     => '3306',
-    'dbname'   => 'm2l_v1',
+    'dbname'   => 'm2l_v2',
     'user'     => 'root',
     'password' => 'pwsio',
 );

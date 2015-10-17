@@ -7,6 +7,7 @@ class Ligue {
     private $id;
     private $label;
     private $reservation;
+    private $author;
     
     public function getId(){
         return $this->id;
@@ -30,5 +31,9 @@ class Ligue {
     
     public function setReservation(Reservation $reservation){
         $this->reservation = $reservation;
+    }
+    
+     public function setAuthor(User $author) {
+        $this->author = $author;
     }
 }

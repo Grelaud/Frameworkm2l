@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Classe Connexion
- *
- */
 class Connexion {
 
     private static $_pdo = null;
@@ -12,13 +8,9 @@ class Connexion {
         
     }
 
-    /**
-     * 
-     * @return PDO
-     */
     private function _get() {
         if (is_null(self::$_pdo)) {
-            self::$_pdo = new PDO('mysql:dbname=m2l_v1;host=127.0.0.1', 'root', 'pwsio');
+            self::$_pdo = new PDO('mysql:dbname=m2l_v2;host=127.0.0.1', 'root', 'pwsio');
             self::$_pdo->exec('SET CHARACTER SET utf8');
         }
         return self::$_pdo;

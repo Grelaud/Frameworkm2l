@@ -1,14 +1,15 @@
 {% extends "layout.html.twig" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-{% for reservation in reservations %}
 <article>
+    <h1><u><center>Liste des réservations</center></u></h1>
+{% for reservation in reservations %}
     <h2><a class="articleTitle" href="{{ path('reservation', { 'id': reservation.id }) }}">Réservation : {{ reservation.id }}</a></h2>
     date : {{ reservation.date }}<br/>
     heure de début :{{ reservation.heureDebut }}<br/>
     heure de fin : {{ reservation.heureFin }}<br/>
     
-    <p>Numéro de la ligue :{{ reservation.ligue_id }}</p>
+    <p>Numéro de la ligue : {{ reservation.ligue_id }}</p>
 </article>
 {% endfor %}
 {% endblock %}

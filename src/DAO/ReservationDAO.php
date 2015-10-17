@@ -6,13 +6,7 @@ use FrameworkM2L\Domain\Reservation;
 
 
 class ReservationDAO extends DAO {
-
-    /**
-     * Return a list of all articles, sorted by date (most recent first).
-     *
-     * @return array A list of all articles.
-     */
-
+    
     public function findAll() {
         $sql = "select id,date,heureDebut,heureFin,salle_id,ligue_id from reservation order by id";
         $result = $this->getDb()->fetchAll($sql);
